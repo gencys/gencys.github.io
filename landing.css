@@ -34,7 +34,7 @@
   color: #FFE678;
 }
 
-#smallText {
+p.smallText {
   color: #13262F;
   font-size: 32px;
   font-weight: 500;

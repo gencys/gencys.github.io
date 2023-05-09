@@ -3,10 +3,11 @@ const $centeredContent = $(".centeredContent");
 const $faceDiv = $(".faceDiv");
 const $myFace = $(".myFace");
 const $jean = $("#jean");
+var thresholdArray = [];
+var step = 0.02;
 
-let contentPositions = [];
-for (let x =0; x<$centeredContent.length; x++) {
-  contentPositions.push($($centeredContent[x]).position().top);
+for (let i = 0; i <=  1.00; i = i + step) {
+  thresholdArray.push(i);
 }
 
 $(document).ready(function() {
@@ -26,22 +27,33 @@ $(document).mousemove(function(e) {
     left: e.pageX + 20,
     top: e.pageY
   });
-
-if ($(window).scrollTop() <= 0) {
-  $("#firstContent").css("opacity", 1);
-}
-
 });
 
-function setGaussianOpacity(object) {
-  var opacity = Math.exp(- Math.pow($window.scrollTop() - $(object).position().top, 2) / 4000);
-  if ($window.scrollTop() > 0) {
-    $(object).css("opacity",opacity);
-  }
+function scrollTrigger(selector, options = {}) {
+  let els = document.querySelectorAll(selector)
+  els = Array.from(els)
+  els.forEach(el => {
+    addObserver(el, options)
+  })
 }
 
-$window.scroll(function() {
-  setGaussianOpacity("#firstContent");
-  setGaussianOpacity("#secondContent");
-  //console.log($("body").children().eq(0).position().top);
-});
+function addObserver(el, options = {}) {
+  $(el).css('opacity', 0);
+  let observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      let elem = $(entry.target);
+      if(entry.isIntersecting) {
+        x = entry.intersectionRatio;
+        elem.css('opacity', x);
+      } else {
+        elem.css('opacity', 0);
+      }
+    })
+  }, options)
+  observer.observe(el)
+}
+
+scrollTrigger('.mainText', {
+  rootMargin: '-30% 0 -30% 0',
+  threshold: thresholdArray
+})
