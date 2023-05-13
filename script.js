@@ -1,47 +1,80 @@
 var $window = $(window);
 const $centeredContent = $(".centeredContent");
+const $arrow = $(".arrow-down");
 const $faceDiv = $(".faceDiv");
-const $myFace = $(".myFace");
 const $jean = $("#jean");
+const $qwitchLink = $("#qwitchLink");
+const $qwitchCard = $(".qwitchCard");
+const $MBLink = $("#MBLink");
+const $MBCard = $(".MBCard");
+var thresholdArray = [];
+var step = 0.02;
 
-let contentPositions = [];
-for (let x =0; x<$centeredContent.length; x++) {
-  contentPositions.push($($centeredContent[x]).position().top);
+for (let i = 0; i <= 1.00; i = i + step) {
+	thresholdArray.push(i);
 }
 
-$(document).ready(function() {
-  $jean.mouseover(function() {
-    $faceDiv.show();
-    $myFace.attr("src", "bin/ppCropped.jpg");
-  });
+function mouseOverHandler(triggerEl, showedEl){
+	triggerEl.mouseover(function () {
+		showedEl.show();
+		//$myFace.attr("src", "bin/ppCropped.jpg");
+		$(document).mousemove(function (e) {
+			showedEl.offset({
+				left: e.pageX + 20,
+				top: e.pageY
+			});
+		});
+	});
 
-  $jean.mouseleave(function() {
-    $faceDiv.hide();
-    $myFace.attr("src", null);
-  });
+	triggerEl.mouseleave(function () {
+		showedEl.hide();
+		//$myFace.attr("src", null);
+		$(document).off("mousemove");
+	});
+}
+
+$(document).ready(function () {
+	mouseOverHandler($jean, $faceDiv);
+	mouseOverHandler($qwitchLink, $qwitchCard);
+	mouseOverHandler($MBLink, $MBCard);
 });
 
-$(document).mousemove(function(e) {
-  $faceDiv.offset({
-    left: e.pageX + 20,
-    top: e.pageY
-  });
-
-if ($(window).scrollTop() <= 0) {
-  $("#firstContent").css("opacity", 1);
+function scrollTrigger(selector, options = {}) {
+	let els = document.querySelectorAll(selector)
+	els = Array.from(els)
+	els.forEach(el => {
+		addObserver(el, options)
+	})
 }
 
+function addObserver(el, options = {}) {
+	$(el).css('opacity', 0);
+	let observer = new IntersectionObserver((entries, observer) => {
+		entries.forEach(entry => {
+			let elem = $(entry.target);
+			if (entry.isIntersecting) {
+				x = entry.intersectionRatio;
+				elem.css('opacity', x);
+			} else {
+				elem.css('opacity', 0);
+				if (options.forget) {
+					observer.unobserve(el);
+				}
+			}
+		})
+	}, options)
+	observer.observe(el)
+}
+
+scrollTrigger('.mainText', {
+	rootMargin: '-30% 0 -30% 0',
+	threshold: thresholdArray,
+	forget: false
 });
 
-function setGaussianOpacity(object) {
-  var opacity = Math.exp(- Math.pow($window.scrollTop() - $(object).position().top, 2) / 4000);
-  if ($window.scrollTop() > 0) {
-    $(object).css("opacity",opacity);
-  }
-}
-
-$window.scroll(function() {
-  setGaussianOpacity("#firstContent");
-  setGaussianOpacity("#secondContent");
-  //console.log($("body").children().eq(0).position().top);
+var marginTop = - $window.height() + 160;
+scrollTrigger('.arrow-wrapper', {
+	rootMargin: marginTop.toString() + 'px 0 0 0',
+	threshold: thresholdArray,
+	forget: true
 });
