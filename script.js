@@ -67,14 +67,14 @@ function addObserver(el, options = {}) {
 }
 
 scrollTrigger('.mainText', {
-	rootMargin: '-30% 0 -30% 0',
+	rootMargin: '-30% 0% -30% 0%',
 	threshold: thresholdArray,
 	forget: false
 });
 
 var marginTop = - $window.height() + 160;
 scrollTrigger('.arrow-wrapper', {
-	rootMargin: marginTop.toString() + 'px 0 0 0',
+	rootMargin: marginTop.toString() + 'px 0px 0px 0px',
 	threshold: thresholdArray,
 	forget: true
 });
