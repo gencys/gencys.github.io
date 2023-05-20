@@ -99,12 +99,12 @@ a > svg {
 	text-decoration: none;
 }
 
-#wrapper_faq {
+#faq {
 	background-color: var(--header-color);
 	padding: 5em 5em 5em 5em;
 }
 
-#wrapper_faq > .centered {
+#faq > .centered {
 	padding-bottom: 1em;
 }
 
@@ -130,7 +130,7 @@ a > svg {
 		padding: 2em 1em 0em 1em;
 	}
 
-	#wrapper_faq {
+	#faq {
 		padding: 2em 1em 1em 1em;
 	}
 }
