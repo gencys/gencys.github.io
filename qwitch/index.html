@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Qwitch - Stream Twitch in Quicktime">
+    <meta name="theme-color" media="(prefers-color-scheme: light)" content="#ad8dcc">
+    <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#ad8dcc">
+    <link rel="stylesheet" type="text/css" href="main.css">
+    <title>Qwitch</title>
+    <link rel="icon" type="image/x-icon" href="./favicon.ico">
+</head>
+
+<body>
+    <main>
+        <div class="wrapper_ltr">
+            <div class="caption">
+                <div id="title">
+                    <img src="./images/qwitch_256.png" width="128" height="128" alt="Qwitch Icon">
+                    <h1>Qwitch</h1>
+                </div>
+                <h2>Stream Twitch in Quicktime!</h2>
+                <br>
+                <p>Qwitch is a CLI which allows you to watch streams and videos from Twitch directly in Quicktime on
+                    macOS.</p>
+                <a id="pipLink" href="https://pypi.org/project/qwitch/">
+                    <img src="https://pypi.org/static/images/logo-small.2a411bc6.svg" alt="PyPI Logo" width="48">
+                    <div>
+                        <p>Get it on</p>
+                        <h3>PyPI.org</h3>
+                    </div>
+                </a>
+            </div>
+            <div class="img">
+                <img id="imgPC" src="./images/demoPC.png" alt="Demo picture on computer." width="900">
+            </div>
+        </div>
+        <div class="wrapper_rtl">
+            <div class="caption">
+                <h2>Watch livestreams and videos!</h2>
+                <p>Qwitch allows you to know which of the streamers you follow are live to watch their streams. You can
+                    also watch their videos, and all that with the video quality of your choice!</p>
+                <br>
+                <h2>Avoid the resource-heavy Twitch.tv!</h2>
+                <p>Because of the technology it uses, Twitch.tv uses a lot of resources on your computer. Qwitch exists
+                    to avoid using this website, and still enjoy your favourite streams!</p>
+                <br>
+                <h2>And... It's open-source!</h2>
+                <p>Qwitch is open-source and free, it'll stay this way forever. This means you can read Qwitch's code to
+                    check that it doesn't collect any of your data.</p>
+                <h3 class="centered">You can contact us at:</h3>
+                <div class="centered">
+                    <a href="https://universeodon.com/@jeanvi" target="_blank">
+                        <svg width="32" height="32" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                            <path
+                                d="M433 179.11c0-97.2-63.71-125.7-63.71-125.7-62.52-28.7-228.56-28.4-290.48 0 0 0-63.72 28.5-63.72 125.7 0 115.7-6.6 259.4 105.63 289.1 40.51 10.7 75.32 13 103.33 11.4 50.81-2.8 79.32-18.1 79.32-18.1l-1.7-36.9s-36.31 11.4-77.12 10.1c-40.41-1.4-83-4.4-89.63-54a102.54 102.54 0 0 1-.9-13.9c85.63 20.9 158.65 9.1 178.75 6.7 56.12-6.7 105-41.3 111.23-72.9 9.8-49.8 9-121.5 9-121.5zm-75.12 125.2h-46.63v-114.2c0-49.7-64-51.6-64 6.9v62.5h-46.33V197c0-58.5-64-56.6-64-6.9v114.2H90.19c0-122.1-5.2-147.9 18.41-175 25.9-28.9 79.82-30.8 103.83 6.1l11.6 19.5 11.6-19.5c24.11-37.1 78.12-34.8 103.83-6.1 23.71 27.3 18.4 53 18.4 175z" />
+                        </svg>
+                    </a>
+                    <a href="https://github.com/gencys/qwitch" target="_blank">
+                        <svg width="32" height="32" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512">
+                            <path
+                                d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+            <div class="img">
+                <img src="./images/extraDemoPC.png" alt="Extra demo picture on computer." width="1200">
+            </div>
+        </div>
+        <div id="faq">
+            <h1 class="centered">FAQ</h1>
+            <div class="centered">
+                <div class="column">
+                    <h2>How to install Qwitch?</h2>
+                    <p>To install Qwitch you will need to have installed Python >= 3.8 and the XCode Command Line Tools.
+                    </p>
+                    <p>What's beautiful is that you can get these two requirement installed with only one command since
+                        XCode Command Line Tools will also install a compatible version of python3. All you need to do
+                        is run the following command</p>
+                    <pre>
+                        <code>
+                            xcode-select --install
+                        </code>
+                    </pre>
+                    <p>This will prompt you to install XCode Command Line Tools on your environment. Now you should be
+                        able to run python and pip commands.</p>
+                    <p>Qwitch is available via pip only. Simply run the following command to install it:</p>
+                    <pre>
+                        <code>
+                            pip3 install --user qwitch
+                        </code>
+                    </pre>
+                    <p>Once that's done, you'll be able to use Qwitch directly in the terminal. On the first use, the
+                        CLI will ask you two things:</p>
+                    <ul>
+                        <li>The value of Twitch's auth-token cookie</li>
+                        <li>For you to allow Qwitch to have access to a few things on your Twitch account</li>
+                    </ul>
+                    <p>First, open your favorite web browser and log into your Twitch account. Then you'll need the
+                        value of the auth-token cookie. To grab it:</p>
+                    <ol>
+                        <li>Right-click anywhere on Twitch's webpage</li>
+                        <li>Click on "Inspect Element" or "Inspect"</li>
+                        <li>Navigate to the "Storage" or "Application" tab on the little window that opened</li>
+                        <li>Expand the "Cookies" folder</li>
+                        <li>Click on "twitch.tv"</li>
+                        <li>Search for the "auth-token" entry and copy its value (a 30-character string containing
+                            numbers and letters)</li>
+                    </ol>
+                    <p>Alternatively, you can use a browser extension like cookies.txt for Firefox. This will generate a
+                        text file in which you'll need to search for the "auth-token" entry.</p>
+                    <p>Well done! You'll need this to set up Qwitch.</p>
+                    <p>Now you can use Qwitch in the terminal and it will ask you for this token in due time. It will
+                        also prompt you to give it access to a few information from your Twitch account. To do so it
+                        will automatically open your web browser, you'll need to accept, and then copy and paste the URL
+                        of the page back to Qwitch.</p>
+                    <h2>Are there configurable options?</h2>
+                    <p>As a matter of fact, yes. Qwitch generates a config file to store the information it uses, and
+                        there are options you can configure in there. To know more about those, please visit <a
+                            href="https://github.com/gencys/qwitch/tree/release#qwitchs-config-file"
+                            target="_blank">Qwitch's GitHub repository</a>.</p>
+                </div>
+                <div class="column">
+                    <h2>Which streamers I follow are live now?</h2>
+                    <p>This is rather simple, simply enter the command below:</p>
+                    <pre>
+                        <code>
+                            qwitch -s
+                        </code>
+                    </pre>
+                    <p>The option <code>-s</code> is short for <code>--streams</code>. Qwitch will get the list of
+                        streamers you follow and display which ones are live now, with information about their stream.
+                    </p>
+
+                    <h2>How do I list the streamers I follow and their channel name?</h2>
+                    <p>This is rather simple, simply enter the command below:</p>
+                    <pre>
+                        <code>
+                            qwitch -f
+                        </code>
+                    </pre>
+                    <p>The option <code>-f</code> is short for <code>--follows</code>. Qwitch will get the list of
+                        streamers you follow and display information about their channel. <strong>Most important
+                            information is
+                            their channel name displayed in red, which Qwitch needs when you search for their videos or
+                            streams.</strong>
+                    </p>
+
+                    <h2>How do I watch this streamer's livestream?</h2>
+                    <p>Say your favourite streamer is live and you want to watch their stream. Then all you'll need is
+                        the name of their channel. For example, if I want to watch Critical Role live, and I know the
+                        name of their channel is criticalrole then I use the following command to launch their
+                        livestream:</p>
+                    <pre>
+                        <code>
+                            qwitch -s criticalrole
+                        </code>
+                    </pre>
+                    <p>To know your streamer's channel name either use <code>qwitch -s</code>, if they are live then the
+                        channel name will be written in red. Otherwise, look at Twitch's link to their channel. In
+                        Critical Role's example it would be <code>https://twitch.tv/criticalrole</code> so their channel
+                        name is <code>criticalrole</code>.</p>
+                    <p>Alternatively you can list the streamers you follow with <code>qwitch -f</code> and the channel
+                        names will be
+                        displayed in red.</p>
+
+                    <h2>How do I watch this streamer's last video?</h2>
+                    <p>You can watch a streamer's last video with the <code>-l</code> option (short for
+                        <code>--last</code>), like so:
+                    </p>
+                    <pre>
+                        <code>
+                            qwitch -l channelname
+                        </code>
+                    </pre>
+                    <p>and replacing <code>channelname</code> by the streamer's actual channel name.</p>
+                </div>
+                <div class="column">
+                    <h2>How do I list a streamer's last 20 videos?</h2>
+                    <p>You can watch a streamer's last video with the <code>-V</code> option (or <code>--Videos</code>),
+                        like so:</p>
+                    <pre>
+                        <code>
+                            qwitch -V channelname
+                        </code>
+                    </pre>
+                    <p>and replacing <code>channelname</code> by the streamer's actual channel name.</p>
+                    <p>This will list the videos one by one, and ask you each time if you want to watch the video.
+                        Simply enter <code>y</code>, for yes, or <code>n</code>, for no, and hit <kbd>⏎ Enter</kbd>.</p>
+
+                    <h2>How do I search for, and watch a streamer's video?</h2>
+                    <p>To search and watch one of the streamer's last 20 videos, you can use the <code>-v</code> (short
+                        for <code>--vod</code>) either with a video ID or by using keywords from the video's title.</p>
+                    <p>A video ID can be obtained from the video's twitch.tv link (e.g.
+                        <code>https://twitch.tv/videos/524717693</code> the video ID is <code>524717693</code>), or
+                        after using <code>qwitch -V channelname</code> to list channelname's last 20 videos. Once the
+                        video ID is obtained you can watch it with:
+                    </p>
+                    <pre>
+                        <code>
+                            qwitch -v &lt;VIDEO_ID&gt;
+                        </code>
+                    </pre>
+                    <p>where <code>&lt;VIDEO_ID&gt;</code> has to be replaced with the actual video ID (e.g.
+                        <code>524717693</code>).
+                    </p>
+                    <p>To search for a video with a keyword(s), specify the keyword in quotation marks followed by the
+                        channel name. Like so:</p>
+                    <pre>
+                        <code>
+                            qwitch -v "some keywords" channelname
+                        </code>
+                    </pre>
+                    <p>This will search for a video with the title containing exactly <code>some keywords</code> in
+                        channelname's last 20 videos. The keywords you use have to be an exact match (up to letter case)
+                        because Twitch does not have any search engine to search for videos.</p>
+
+                    <h2>How do I adjust the video quality?</h2>
+                    <p>You can adjust a video's playback quality by telling Qwitch which video quality you want it to
+                        use. This is done by passing a video quality tag in the command (i.e. one of <code>worst</code>,
+                        <code>160p</code>, <code>360p</code>, <code>480p</code>, <code>720p</code>, <code>1080p</code>
+                        or <code>best</code>) like so:
+                    </p>
+                    <pre>
+                        <code>
+                            qwitch -s criticalrole 480p
+                        </code>
+                    </pre>
+                    <p>This works with any qwitch command that can play a video.</p>
+                    <p>By default qwitch will use the best available quality. However, you can override this by setting
+                        the <code>default-stream</code> option in Qwitch's config file.</p>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer>
+    </footer>
+</body>
+
+</html>
