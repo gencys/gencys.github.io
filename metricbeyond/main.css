@@ -123,14 +123,14 @@ a > svg {
 
 @media screen and (max-width: 800px){
 	.wrapper_ltr {
-		padding: 2em 1em 0em 1em;
+		padding: 2em 0.5em 0em 0.5em;
 	}
 
 	.wrapper_rtl {
-		padding: 2em 1em 0em 1em;
+		padding: 2em 0.5em 0em 0.5em;
 	}
 
 	#faq {
-		padding: 2em 1em 1em 1em;
+		padding: 2em 0.5em 1em 0.5em;
 	}
 }
