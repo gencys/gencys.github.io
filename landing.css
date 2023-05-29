@@ -30,6 +30,7 @@
 	font-family: "IBM Plex Mono", monospace;
 	padding: 0px;
 	margin: 0px;
+	box-sizing: border-box;
 }
 
 .centeredContent {
@@ -41,7 +42,7 @@
 	height: 100vh;
 }
 
-.mainText p {
+.mainText > p, .mainText > .linkWrapper > p {
 	color: var(--big-text-color);
 	font-size: 55px;
 	font-weight: 700;
@@ -80,19 +81,23 @@ p.smallText {
 }
 
 .qwitchCard {
+	position: fixed;
 	box-shadow: 10px 10px 0 #ad8dcc;
 }
 
 .MBCard {
+	position: fixed;
 	box-shadow: 10px 10px 0 #db0010;
 }
 
 .faceDiv {
+	position: fixed;
 	box-shadow: 10px 10px 0 var(--shadow-color);
 	margin: 0;
 	padding: 0;
 	width: fit-content;
 	height: 357px;
+	z-index: 5;
 }
 
 .card * {
@@ -114,4 +119,63 @@ p.smallText {
 	display: flex;
 	flex-direction: column;
 	gap: 10px;
+}
+
+@media screen and (max-width: 1600px) {
+
+	.centeredContent {
+		width: 100%;
+		word-wrap: break-word;
+	}
+
+	.mainText {
+		padding: 10px;
+	}
+
+	.mainText > p, .mainText > .linkWrapper > p {
+		font-size: 30px;
+	}
+
+	p.smallText {
+		font-size: 25px;
+	}
+
+	.card h2, #MBInfo .smallText, #qwitchInfo .smallText {
+		display: none;
+	}
+
+	.card * {
+		background-color: var(--body-color);
+	}
+
+	.card {
+		width: 100%;
+		color: var(--small-text-color);
+		padding: 0px 0px 0px 20px;
+		margin: 20px 0px 0px 0px;
+		background-color: var(--body-color);
+		display: block;
+	}
+
+	.qwitchCard, .MBCard {
+		position: relative;
+		box-shadow: none;
+	}
+
+	.MBCard {
+		border-left: 3px solid #db0010;
+		border-radius: 0px;
+	}
+
+	.qwitchCard {
+		border-left: 3px solid #ad8dcc;
+		border-radius: 0px;
+	}
+
+	.linkWrapper {
+		display: flex;
+		flex-direction: row;
+		align-items:end;
+		gap: 10px;
+	}
 }
