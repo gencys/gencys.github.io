@@ -14,10 +14,9 @@ for (let i = 0; i <= 1.00; i = i + step) {
 	thresholdArray.push(i);
 }
 
-function mouseOverHandler(triggerEl, showedEl){
+function mouseOverHandler(triggerEl, showedEl) {
 	triggerEl.mouseover(function () {
 		showedEl.show();
-		//$myFace.attr("src", "bin/ppCropped.jpg");
 		$(document).mousemove(function (e) {
 			showedEl.offset({
 				left: e.pageX + 20,
@@ -28,16 +27,9 @@ function mouseOverHandler(triggerEl, showedEl){
 
 	triggerEl.mouseleave(function () {
 		showedEl.hide();
-		//$myFace.attr("src", null);
 		$(document).off("mousemove");
 	});
 }
-
-$(document).ready(function () {
-	mouseOverHandler($jean, $faceDiv);
-	mouseOverHandler($qwitchLink, $qwitchCard);
-	mouseOverHandler($MBLink, $MBCard);
-});
 
 function scrollTrigger(selector, options = {}) {
 	let els = document.querySelectorAll(selector)
@@ -66,15 +58,45 @@ function addObserver(el, options = {}) {
 	observer.observe(el)
 }
 
-scrollTrigger('.mainText', {
-	rootMargin: '-30% 0% -30% 0%',
-	threshold: thresholdArray,
-	forget: false
-});
+function changeCardStyle(cardElement) {
+	cardElement.show();
+}
 
-var marginTop = - $window.height() + 160;
-scrollTrigger('.arrow-wrapper', {
-	rootMargin: marginTop.toString() + 'px 0px 0px 0px',
-	threshold: thresholdArray,
-	forget: true
+function moveCards() {
+	$MBCard.appendTo("#MBInfo");
+	$qwitchCard.appendTo("#qwitchInfo");
+	changeCardStyle($MBCard);
+	changeCardStyle($qwitchCard);
+	$('#MBLogo').prependTo('#MBLinkWrapper');
+	$('#qwitchLogo').prependTo('#qwitchLinkWrapper');
+	$('#MBLogo').height(35).width(35);
+	$('#qwitchLogo').height(35).width(35);
+	document.querySelectorAll('.learnMore').forEach((p) =>
+		p.textContent = 'Click above to learn more!');
+}
+
+$(document).ready(function () {
+	if (window.innerWidth > 1600) {
+		mouseOverHandler($jean, $faceDiv);
+		mouseOverHandler($qwitchLink, $qwitchCard);
+		mouseOverHandler($MBLink, $MBCard);
+		marginTrigger = '-30';
+	}
+	else {
+		moveCards();
+		marginTrigger = '-15';
+	}
+
+	scrollTrigger('.mainText', {
+		rootMargin: marginTrigger + '% 0% ' + marginTrigger + '% 0%',
+		threshold: thresholdArray,
+		forget: false
+	});
+
+	var marginTop = - $window.height() + 160;
+	scrollTrigger('.arrow-wrapper', {
+		rootMargin: marginTop.toString() + 'px 0px 0px 0px',
+		threshold: thresholdArray,
+		forget: true
+	});
 });
