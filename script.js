@@ -14,7 +14,7 @@ for (let i = 0; i <= 1.00; i = i + step) {
 	thresholdArray.push(i);
 }
 
-function mouseOverHandler(triggerEl, showedEl){
+function mouseOverHandler(triggerEl, showedEl) {
 	triggerEl.mouseover(function () {
 		showedEl.show();
 		$(document).mousemove(function (e) {
@@ -62,7 +62,7 @@ function changeCardStyle(cardElement) {
 	cardElement.show();
 }
 
-function moveCards(){
+function moveCards() {
 	$MBCard.appendTo("#MBInfo");
 	$qwitchCard.appendTo("#qwitchInfo");
 	changeCardStyle($MBCard);
@@ -71,6 +71,8 @@ function moveCards(){
 	$('#qwitchLogo').prependTo('#qwitchLinkWrapper');
 	$('#MBLogo').height(35).width(35);
 	$('#qwitchLogo').height(35).width(35);
+	document.querySelectorAll('.learnMore').forEach((p) =>
+		p.textContent = 'Click above to learn more!');
 }
 
 $(document).ready(function () {
@@ -90,7 +92,7 @@ $(document).ready(function () {
 		threshold: thresholdArray,
 		forget: false
 	});
-	
+
 	var marginTop = - $window.height() + 160;
 	scrollTrigger('.arrow-wrapper', {
 		rootMargin: marginTop.toString() + 'px 0px 0px 0px',

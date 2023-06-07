@@ -11,6 +11,7 @@
 	--shadow-link-color: #fb5324;
 	--inverted-body-color: rgb(55, 62, 71);
 	--inverted-small-text-color: white;
+	--footer-color: rgb(246, 248, 250);
 }
 
 @media screen and (prefers-color-scheme: dark) {
@@ -22,6 +23,7 @@
 		--shadow-color: #007EA7;
 		--inverted-body-color: rgb(246, 248, 250);
 		--inverted-small-text-color: #13262F;
+		--footer-color: rgb(45, 51, 59);
 	}
 }
 
@@ -42,7 +44,8 @@
 	height: 100vh;
 }
 
-.mainText > p, .mainText > .linkWrapper > p {
+.mainText>p,
+.mainText>.linkWrapper>p {
 	color: var(--big-text-color);
 	font-size: 55px;
 	font-weight: 700;
@@ -121,6 +124,26 @@ p.smallText {
 	gap: 10px;
 }
 
+footer {
+	height: 60px;
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	gap: 20px;
+	margin-top: -60px;
+}
+
+footer, footer * {
+	background-color: var(--footer-color);
+}
+
+footer > a > svg {
+	fill: var(--big-text-color);
+	text-decoration: none;
+}
+
 @media screen and (max-width: 1600px) {
 
 	.centeredContent {
@@ -132,7 +155,8 @@ p.smallText {
 		padding: 10px;
 	}
 
-	.mainText > p, .mainText > .linkWrapper > p {
+	.mainText>p,
+	.mainText>.linkWrapper>p {
 		font-size: 30px;
 	}
 
@@ -140,7 +164,9 @@ p.smallText {
 		font-size: 25px;
 	}
 
-	.card h2, #MBInfo .smallText, #qwitchInfo .smallText {
+	.card h2,
+	#MBInfo .smallText,
+	#qwitchInfo .smallText {
 		display: none;
 	}
 
@@ -150,6 +176,7 @@ p.smallText {
 
 	.card {
 		width: 100%;
+		max-width: 550px;
 		color: var(--small-text-color);
 		padding: 0px 0px 0px 20px;
 		margin: 20px 0px 0px 0px;
@@ -157,7 +184,8 @@ p.smallText {
 		display: block;
 	}
 
-	.qwitchCard, .MBCard {
+	.qwitchCard,
+	.MBCard {
 		position: relative;
 		box-shadow: none;
 	}
@@ -175,7 +203,7 @@ p.smallText {
 	.linkWrapper {
 		display: flex;
 		flex-direction: row;
-		align-items:end;
+		align-items: end;
 		gap: 10px;
 	}
 }
