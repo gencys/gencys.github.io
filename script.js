@@ -69,8 +69,6 @@ function moveCards() {
 	changeCardStyle($qwitchCard);
 	$('#MBLogo').prependTo('#MBLinkWrapper');
 	$('#qwitchLogo').prependTo('#qwitchLinkWrapper');
-	$('#MBLogo').height(35).width(35);
-	$('#qwitchLogo').height(35).width(35);
 	document.querySelectorAll('.learnMore').forEach((p) =>
 		p.textContent = 'Click above to learn more!');
 }
