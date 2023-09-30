@@ -1,0 +1,49 @@
+:root {
+  color-scheme: light dark;
+  --body-color: rgb(255, 255, 255);
+  --spacing: 20px;
+  --text-color: rgb(36, 41, 47);
+  --border-color: rgb(216, 222, 228);
+  --link-color: rgb(9, 105, 218);
+  --header-color: rgb(246, 248, 250);
+}
+
+@media screen and (prefers-color-scheme: dark) {
+  :root {
+    --body-color: rgb(34, 39, 46);
+    --border-color: rgb(55, 62, 71);
+    --text-color: rgb(173, 186, 199);
+    --link-color: orange;
+    --header-color: rgb(45, 51, 59);
+  }
+}
+
+body {
+  font-size: 1.1em;
+  line-height: 1.6em;
+  background-color: var(--body-color);
+}
+
+hr {
+  width: 30rem;
+  color: var(--border-color);
+}
+
+section.supportPaper {
+  width: 30rem;
+  margin: 0 auto 0 auto;
+}
+
+h1 {
+  margin: 0 0 .5rem 0;
+  line-height: normal;
+}
+
+.lastUpdated {
+  font-size: .8em;
+  margin-bottom: 3rem;
+}
+
+.small {
+  font-size: 80%;
+}
